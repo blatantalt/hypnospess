@@ -169,6 +169,13 @@
 
 //Antag: Is the mob an antag (of the specific type, if applicable?)
 // TODO
+/datum/element/hypnotic/proc/Antag(datum/antagonist/A)
+	var/val = FALSE
+	var/datum/mobMind = searcherMob.mind
+	for(var/i in mobMind.antag_datums)
+		if(i.name == A.name)
+			val = TRUE
+	return val
 
 //Job: does the mob have the specified job? (or, a job at all)
 // TODO
